@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>2. labos</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <script src="https://use.fontawesome.com/ecb0e76b1f.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <button id="load-countries-btn">LOAD COUNTRIES</button>
+
+        <div id="filters">
+          <div>
+            <label for="limit">Limit</label>
+            <input id="limit" type="number" />
+          </div>
+
+          <div>
+            <label for="reverse-checkbox">Reverse</label>
+            <input id="reverse-checkbox" type="checkbox" />
+          </div>
+
+          <select name="subregions" id="subregion-select">
+            <option selected>All subregions</option>
+          </select>
+
+          <button id="refresh-btn">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="container">
+        <button id="add-country-btn">ADD COUNTRY</button>
+        <div id="form-section">
+          <form>
+            <div>
+              <input type="text" id="input-name" placeholder="Name" />
+              <input type="text" id="input-capital" placeholder="Capital" />
+              <input type="text" id="input-subregion" placeholder="Subregion" />
+            </div>
+            <div>
+              <input type="text" id="input-flag" placeholder="Flag URL" />
+              <input
+                type="number"
+                min="0"
+                id="input-population"
+                placeholder="Population"
+              />
+            </div>
+          </form>
+          <button id="submit-form-btn">SUBMIT</button>
+        </div>
+      </div>
+
+      <div class="container">
+        <table>
+          <tr>
+            <th>Country</th>
+            <th>Capital</th>
+            <th>Subregion</th>
+            <th>Population</th>
+            <th>Flag</th>
+            <th></th>
+          </tr>
+        </table>
+      </div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

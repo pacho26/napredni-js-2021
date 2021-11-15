@@ -1,0 +1,168 @@
+* {
+  font-family: Poppins, Verdana, Tahoma, sans-serif;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  max-width: 1000px;
+  background: #202124;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 30px 0 120px 0;
+  color: #f6f6f6;
+}
+
+.container:not(:first-of-type) {
+  margin-top: 30px;
+}
+
+.container:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container:nth-of-type(2) {
+  margin-bottom: 10px;
+}
+
+#filters {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+button {
+  color: #f6f6f6;
+  background-color: #04aa6d;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  box-shadow: 0 5px 15px #111;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #008b58;
+}
+
+#load-countries-btn {
+  margin-right: 90px;
+}
+
+#subregion-select {
+  min-width: 180px;
+  border-radius: 4px;
+  border: 1px solid #fff;
+}
+
+#form-section {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+input {
+  border-radius: 4px;
+  border: 1px solid #fff;
+}
+
+form > * {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 30px;
+  transform: scale(1.12);
+}
+
+#submit-form-btn {
+  margin-top: 12px;
+}
+
+table {
+  border-collapse: collapse;
+  display: none;
+  max-width: 900px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px #111;
+}
+
+th {
+  background-color: #04aa6d;
+  padding: 12px 0 12px 20px;
+  text-align: left;
+  color: #f6f6f6;
+}
+
+th:not(:last-child) {
+  width: 500px;
+}
+
+th:first-of-type {
+  border-top-left-radius: 8px;
+}
+
+th:last-of-type {
+  width: 50px;
+  border-top-right-radius: 8px;
+}
+
+.country > td {
+  background-color: #303136;
+  min-height: 40px;
+}
+
+td {
+  padding-left: 20px;
+}
+
+tbody:not(:last-child) {
+  border-bottom: 2px solid #202124;
+}
+
+.flag-container {
+  padding: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flag {
+  max-width: 65px;
+  max-height: 42px;
+  position: relative;
+  right: 26px;
+}
+
+.delete-btn {
+  background-color: #d9534f;
+  transform: scale(0.88);
+  position: relative;
+  right: 28px;
+}
+
+.delete-btn:hover {
+  background-color: #bc2e29;
+}
+
+#refresh-btn {
+  padding: 8px 12px;
+  position: relative;
+  left: 6px;
+}
+
+.fa-refresh {
+  font-size: 17px;
+}
