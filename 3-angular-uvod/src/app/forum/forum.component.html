@@ -1,0 +1,73 @@
+<main class="mt-5">
+  <h1>Posts ({{ posts.length }})</h1>
+  <div class="post-container" *ngFor="let post of posts; let i = index">
+    <h2>
+      by <span class="author">{{ post.author }}</span>
+      <span class="timestamp">{{ post.timestamp.toLocaleString() }}</span>
+    </h2>
+    <p *ngIf="!post.isEditing">
+      {{ post.comment }}
+    </p>
+    <textarea
+      class="form-control"
+      aria-label="Comment"
+      [(ngModel)]="post.comment"
+      *ngIf="post.isEditing"
+    ></textarea>
+    <div class="mt-4 buttons">
+      <button class="btn btn-dark" (click)="post.isEditing = !post.isEditing">
+        {{ post.isEditing ? "Done editing" : "Edit" }}
+      </button>
+      <button class="btn btn-danger" (click)="posts.splice(i, 1)">
+        Delete
+      </button>
+    </div>
+  </div>
+
+  <button
+    *ngIf="!isWritingNewPost"
+    class="btn btn-primary mt-4"
+    (click)="isWritingNewPost = true; clearNewPostFields()"
+  >
+    Add post
+  </button>
+
+  <div class="new-post-container" *ngIf="isWritingNewPost">
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Username</span>
+      </div>
+      <input
+        type="text"
+        class="form-control mb-3"
+        placeholder="Enter your username"
+        aria-label="Username"
+        [(ngModel)]="newPost.author"
+      />
+
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Comment</span>
+        </div>
+        <textarea
+          class="form-control"
+          aria-label="Comment"
+          [(ngModel)]="newPost.comment"
+        ></textarea>
+      </div>
+    </div>
+
+    <div>
+      <button class="btn btn-secondary" (click)="isWritingNewPost = false">
+        Cancel
+      </button>
+      <button
+        class="btn"
+        [ngClass]="checkInputs() > 0 ? 'btn-success' : 'btn-danger'"
+        (click)="checkInputs() ? addPost() : null"
+      >
+        Send
+      </button>
+    </div>
+  </div>
+</main>
