@@ -63,7 +63,7 @@
       </button>
       <button
         class="btn"
-        [ngClass]="checkInputs() > 0 ? 'btn-success' : 'btn-danger'"
+        [ngClass]="checkInputs() ? 'btn-success' : 'btn-danger'"
         (click)="checkInputs() ? addPost() : null"
       >
         Send
