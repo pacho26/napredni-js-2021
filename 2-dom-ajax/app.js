@@ -136,17 +136,18 @@ const resetForm = () => {
 };
 
 const checkInputs = (inputs) => {
+  let isValid = true;
   inputs.forEach((el, idx) => {
     el.value = el.value.trim();
-    if (!el.value) {
-      return false;
-    }
     formEl.elements[idx].style.border = `2px solid ${
       !el.value ? '#d9534f' : '#01af6f'
     }`;
+    if (!el.value) {
+      isValid = false;
+    }
   });
 
-  return true;
+  return isValid;
 };
 
 getCountriesBtn.addEventListener('click', getCountries);
